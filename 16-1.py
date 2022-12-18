@@ -2,11 +2,10 @@
 # Import regex match function
 from re import findall
 import networkx as nx
-import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 
 data = []
-with open('16-1.txt', "r") as f:
+with open('16.txt', "r") as f:
     data = f.read().splitlines()
 
 #print(data)
@@ -48,7 +47,7 @@ def find_path_cost(current_pos, room, G):
     path = nx.shortest_path(G, source=current_pos, target=room)
     cost = len(path)
     for node in path:
-        if node.flow_rate != 0
+        if node.flow_rate != 0:
             cost -= node.flow_rate + 1
     cost -= room.flow_rate
     return cost, path
